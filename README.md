@@ -16,7 +16,7 @@ The Catalog Service is a Spring Boot application that manages catalogs, products
 - Spring Data JPA
 - H2 Database (for development and testing)
 
-- API Endpoints
+## API Endpoints
 Catalogs
 Create Catalog: POST /api/catalogs
 Update Catalog: PUT /api/catalogs/{id}
