@@ -18,15 +18,15 @@ The Catalog Service is a Spring Boot application that manages catalogs, products
 
 ## API Endpoints
 Catalogs
-Create Catalog: POST /api/catalogs
-Update Catalog: PUT /api/catalogs/{id}
-Delete Catalog: DELETE /api/catalogs/{id}
-Get Catalog: GET /api/catalogs/{id}
+- Create Catalog: POST /api/seller/catalogs
+- Update Catalog: PUT /api/seller/catalogs/{id}
+- Delete Catalog: DELETE /api/seller/catalogs/{id}
+- Get Catalogs: GET /api/customer/catalogs
 Products
-Create Product: POST /api/catalogs/{catalogId}/products
-Update Product: PUT /api/catalogs/{catalogId}/products/{productId}
-Delete Product: DELETE /api/catalogs/{catalogId}/products/{productId}
-Get Product: GET /api/catalogs/{catalogId}/products/{productId}
+- Create Product: POST /api/seller/catalogs/{catalogId}/products
+- Update Product: PUT /api/seller/catalogs/{catalogId}/products/{productId}
+- Delete Product: DELETE /api/seller/catalogs/{catalogId}/products/{productId}
+- Get Product: GET /api/catalogs/{catalogId}/products/{productId}
 Variants
 Create Variant: POST /api/products/{productId}/variants
 Update Variant: PUT /api/products/{productId}/variants/{variantId}
