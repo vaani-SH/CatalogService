@@ -1,0 +1,550 @@
+{
+	"info": {
+		"_postman_id": "c99ecb7e-b492-466c-83ea-020d5015067b",
+		"name": "Catalog service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41673695"
+	},
+	"item": [
+		{
+			"name": "Catalog Operations",
+			"item": [
+				{
+					"name": "Create a catalog",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Clothes\",\r\n  \"description\": \"Catalog for clothes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/seller/catalogs",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"seller",
+								"catalogs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all catalogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/customer/catalogs",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customer",
+								"catalogs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a catalog by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update catalog by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Clothing\",\r\n  \"description\": \"Updated Catalog for clothes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a catalog",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Clothing\",\r\n  \"description\": \"Catalog for clothes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Operations",
+			"item": [
+				{
+					"name": "Create a product in catalog",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Top\",\r\n  \"description\": \"tops for women\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/:catalogId/products",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								":catalogId",
+								"products"
+							],
+							"variable": [
+								{
+									"key": "catalogId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all products in catalog",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{variantBase}}/:catalogId/products",
+							"host": [
+								"{{variantBase}}"
+							],
+							"path": [
+								":catalogId",
+								"products"
+							],
+							"variable": [
+								{
+									"key": "catalogId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a product by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{variantBase}}/:catalogId/products/:productId",
+							"host": [
+								"{{variantBase}}"
+							],
+							"path": [
+								":catalogId",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "catalogId",
+									"value": "1"
+								},
+								{
+									"key": "productId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a product by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Updated Smartphone\",\r\n  \"description\": \"Updated model smartphone\",\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/:catalogId/products/:productId",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								":catalogId",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "catalogId",
+									"value": "2"
+								},
+								{
+									"key": "productId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/:catalogId/products/:productId",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								":catalogId",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "catalogId",
+									"value": "2"
+								},
+								{
+									"key": "productId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Variant Operations",
+			"item": [
+				{
+					"name": "create a variant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"color\": \"Blue\",\r\n  \"size\": \"S\",\r\n  \"price\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/products/:productId/variants",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"products",
+								":productId",
+								"variants"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all variants",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{variantBase}}/products/:productId/variants",
+							"host": [
+								"{{variantBase}}"
+							],
+							"path": [
+								"products",
+								":productId",
+								"variants"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a variant by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{variantBase}}/products/:productId/variants/:variantId",
+							"host": [
+								"{{variantBase}}"
+							],
+							"path": [
+								"products",
+								":productId",
+								"variants",
+								":variantId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "1"
+								},
+								{
+									"key": "variantId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a variant",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/products/:productId/variants/:variantId",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"products",
+								":productId",
+								"variants",
+								":variantId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "1"
+								},
+								{
+									"key": "variantId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a variant by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"color\": \"Blue\",\r\n  \"size\": \"M\",\r\n  \"price\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/products/:productId/variants/:variantId",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"products",
+								":productId",
+								"variants",
+								":variantId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "1"
+								},
+								{
+									"key": "variantId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base",
+			"value": "localhost:8080/api/catalogs",
+			"type": "default"
+		},
+		{
+			"key": "variantBase",
+			"value": " http://localhost:8080/api/products",
+			"type": "default"
+		}
+	]
+}
